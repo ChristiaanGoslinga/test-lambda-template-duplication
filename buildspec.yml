@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - aws cloudformation package --template-file template.yml --s3-bucket lambda-python-template --output-template-file outputTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - template.yaml
+    - outputTemplate.yaml
